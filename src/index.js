@@ -18,6 +18,9 @@ function App() {
           "AAPL - Apple Inc.",
           "AMZN - Amazon.com, Inc.",
           "PRIVATE - Ant Group",
+          "AMATApplied Materials, Inc.",
+          "TSLATesla, Inc.",
+          "TSMTaiwan Semiconductor Manufacturing Company Limited"
         ]}
       />
     </div>

@@ -55,7 +55,7 @@ class Autocomplete extends Component {
     }
     // User pressed the down arrow, increment the index
     else if (e.keyCode === 40) {
-      if (activeSuggestion - 1 === filteredSuggestions.length) {
+      if (activeSuggestion === 5 /*filteredSuggestions.length*/) {
         return;
       }
       this.setState({ activeSuggestion: activeSuggestion + 1 });
@@ -78,7 +78,7 @@ render() {
 let suggestionsListComponent;
 
 if (showSuggestions && userInput) {
-    if (filteredSuggestions.length) {
+    if (0 < filteredSuggestions.length) {
       suggestionsListComponent = (
         <ul class="suggestions">
           {filteredSuggestions.map((suggestion, index) => {
@@ -87,6 +87,9 @@ if (showSuggestions && userInput) {
             // Flag the active suggestion with a class
             if (index === activeSuggestion) {
               className = "suggestion-active";
+            }
+            if (index !== activeSuggestion) {
+                className = "suggestion-inactive";
             }
             return (
               <li className={className} key={suggestion} onClick={onClick}>
