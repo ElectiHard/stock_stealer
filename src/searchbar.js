@@ -75,9 +75,12 @@ export function Searchbar({suggestions}){
         } 
         else {
             suggestionsListComponent = (
-                <div className="no-suggestions">
-                    <em>No suggestions available.</em>
-                </div>
+              <ul className="no-suggestions">
+                    <li>
+                      No suggestions for "{userInput}"
+                    </li>
+  
+              </ul>
             );
         }
     }
@@ -90,6 +93,7 @@ export function Searchbar({suggestions}){
                     <h2>type to see stocks</h2>
                     <div className="inputSection">
                     <input
+                        //maxLength = "50"
                         type="text"
                         onChange={onChange}
                         onKeyDown={onKeyDown}
