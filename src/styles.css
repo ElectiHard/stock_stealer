@@ -47,22 +47,11 @@ input {
   width: calc(300px + 1rem);
 }
 
-<<<<<<< Updated upstream
-
-
-=======
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 2862607d6bf4511027f76856830a8c39c5492f0e
->>>>>>> Stashed changes
 .suggestion-active,
 .suggestions li:hover {
   background-color:#e4e4e4;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  
 }
 
 .suggestion-inactive{
