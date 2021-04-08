@@ -6,8 +6,10 @@ import './styles.css'
 
 function App() {
   return (
+    <>
       <Searchbar suggestions={tickers}/>
-  );
+    </>
+  )
 }
 
 render(<App />, document.getElementById('root'));

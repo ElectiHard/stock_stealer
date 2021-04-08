@@ -1,5 +1,6 @@
 import React, { useState, Fragment} from "react";
 import { Fetching } from "./fetching";
+import { Graphs } from "./graphs";
 import './styles.css'
 
 
@@ -32,8 +33,8 @@ export function Searchbar({suggestions}){
             setActiveSuggestion(0);
             setShowSuggestions(false);
             setUserInput(filteredSuggestions[activeSuggestion]);
-            let a = (filteredSuggestions[activeSuggestion].split(" "));
-            setFinalSearch(a[0]);
+            setFinalSearch(userInput.split(" ")[0]);
+            setUserInput("")
         }
         else if (e.key === 'ArrowUp'){
             if (activeSuggestion === 0) {
@@ -52,32 +53,32 @@ export function Searchbar({suggestions}){
     let suggestionsListComponent;
 
     if (showSuggestions && userInput){
-    if (0 < filteredSuggestions.length){
-        suggestionsListComponent = (
-            <ul className="suggestions">
-                {filteredSuggestions.map((suggestion, index) => {
-                    let className;
-                    if (index === activeSuggestion) {
-                  className = "suggestion-active";
-                }
-                if (index !== activeSuggestion) {
-                    className = "suggestion-inactive";
-                }
-                return (
-                  <li className={className} key={suggestion} onClick={onClick}>
-                    {suggestion}
-                  </li>
-                );
-              })}
-            </ul>
-          );
+        if (0 < filteredSuggestions.length){
+            suggestionsListComponent = (
+                <ul className="suggestions">
+                    {filteredSuggestions.map((suggestion, index) => {
+                        let className;
+                        if (index === activeSuggestion) {
+                            className = "suggestion-active";
+                        }
+                        if (index !== activeSuggestion) {
+                            className = "suggestion-inactive";
+                        }
+                        return (
+                            <li className={className} key={suggestion} onClick={onClick}>
+                                {suggestion}
+                            </li>
+                        );
+                    })}
+                </ul>
+            );
         } 
         else {
-          suggestionsListComponent = (
-            <div className="no-suggestions">
-              <em>No suggestions available.</em>
-            </div>
-          );
+            suggestionsListComponent = (
+                <div className="no-suggestions">
+                    <em>No suggestions available.</em>
+                </div>
+            );
         }
     }
 
@@ -87,17 +88,21 @@ export function Searchbar({suggestions}){
                 <div className='header'>
                     <h1>stock stealer thing</h1>
                     <h2>type to see stocks</h2>
+                    <div className="inputSection">
                     <input
                         type="text"
                         onChange={onChange}
                         onKeyDown={onKeyDown}
                         value={userInput}
-                        onBlur={() => setShowSuggestions(false)}
                     />
                     {suggestionsListComponent}
+                    </div>
                 </div>
                 <div className="stockSection">
-                {Fetching(finalSearch)}
+                    {Fetching(finalSearch)}
+                </div>
+                <div className="graphSection">
+                    <Graphs stockName={finalSearch}/>
                 </div>
             </div>
         </Fragment>
