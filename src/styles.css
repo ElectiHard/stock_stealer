@@ -5,6 +5,13 @@
 body {
   font-family: sans-serif;
   background-color: #292b35;
+  margin: 0;
+}
+html {
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 h1 {
   color: #fff;
@@ -12,17 +19,14 @@ h1 {
 h2 {
   color: #e0e0e0;
 }
-div {
-  position:absolute;
-  left: 50%;
-  top: 20%;
-  transform: translate(-50%);
-}
 
 input {
   border: 1px solid #999;
   padding: 0.5rem;
   width: 300px;
+  border-radius: 15px;
+  outline: none;
+
 }
 
 .no-suggestions {
@@ -33,6 +37,7 @@ input {
 
 
 .suggestions {
+  border-radius: 15px;
   border: 1px solid rgb(0, 42, 156);
   border-top-width: 0;
   list-style: none;
@@ -42,8 +47,16 @@ input {
   width: calc(300px + 1rem);
 }
 
+<<<<<<< Updated upstream
 
 
+=======
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2862607d6bf4511027f76856830a8c39c5492f0e
+>>>>>>> Stashed changes
 .suggestion-active,
 .suggestions li:hover {
   background-color:#e4e4e4;
@@ -58,7 +71,14 @@ input {
 
 .suggestions li {
   padding: 0.5rem;
+<<<<<<< Updated upstream
   
+=======
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 2862607d6bf4511027f76856830a8c39c5492f0e
+>>>>>>> Stashed changes
   color: rgb(0, 0, 0);
   font-weight: 70;
 }
@@ -69,4 +89,44 @@ input {
 
 .suggestions li:not(:last-of-type) {
   border-bottom: 1px solid #999;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.stockInfo {
+  margin: 25px;
+  width: 300px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222329;
+}
+
+.stockLoading {
+  margin-left: 25px;
+  margin-right: 25px;
+  width: 300px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.stockSection {
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: auto auto;
 }
