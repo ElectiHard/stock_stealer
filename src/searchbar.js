@@ -33,7 +33,7 @@ export function Searchbar({suggestions}){
             setActiveSuggestion(0);
             setShowSuggestions(false);
             setUserInput(filteredSuggestions[activeSuggestion]);
-            setFinalSearch(userInput.split(" ")[0]);
+            setFinalSearch(filteredSuggestions[activeSuggestion].split(" ")[0]);
             setUserInput("")
         }
         else if (e.key === 'ArrowUp'){
