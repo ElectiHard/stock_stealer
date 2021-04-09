@@ -1,6 +1,7 @@
 import { useState, useEffect, Fragment } from "react";
 import React from "react";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+
 
 
 
@@ -20,16 +21,17 @@ export function Graphs({ stockName }) {
         return null;
     }
     return (
+        
         <Fragment>
-            <AreaChart width={730} height={250} data={result.values.reverse()}
-                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" />
+            <AreaChart width={window.innerHeight *0.6} height ={300} data={result.values.reverse()}
+                margin={{ top: 15, right: 40, left: 20, bottom: 5 }}>
                 <XAxis dataKey="datetime" />
-                <YAxis />
+                <YAxis allowDataOverflow= "false" type="number" allowDecimals = "true" interval = "preserveStart" tickCount = "5"  />
                 <Tooltip />
-                <Legend />
+                <Legend iconSize="14"/>
                 <Area type="monotone" dataKey="close" fill="#e2b714" stroke="#e2b714" fillOpacity={0.8} strokeWidth={2} dot={false}/>
             </AreaChart>
         </Fragment>
+
     )
 }

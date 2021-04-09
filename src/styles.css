@@ -4,6 +4,7 @@
   text-align: center;
 }
 
+
 body {
   font-family: 'Roboto Mono', monospace;
   background-color: #292b35;
@@ -11,19 +12,32 @@ body {
 }
 html {
   scrollbar-width: none;
+  overflow-y: scroll;
 }
 ::-webkit-scrollbar {
   display: none;
 }
 
-h1 {
+@media only screen and (max-width: 600px) {
+  .siteHeader {
+    font-size: 6.5vw;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    color: #fff;
+  }
+}
+@media only screen and (min-width: 600px) {
+.siteHeader {
+  font-size: 40px;
+  margin-top: 5%;
+  margin-bottom: 3%;
   color: #fff;
 }
-h2 {
-  color: #e0e0e0;
 }
 
+
 input {
+  position: sticky;
   border: 1px solid #999;
   padding: 0.5rem;
   width: 300px;
@@ -129,5 +143,16 @@ input {
 }
 
 .graphSection {
-  margin-left: 32%;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 50px;
+  width: 100vw;
+  overflow-x:hidden;
+  margin-left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }

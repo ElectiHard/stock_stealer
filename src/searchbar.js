@@ -25,7 +25,9 @@ export function Searchbar({suggestions}){
         setActiveSuggestion(0);
         setFilteredSuggestions([]);
         setShowSuggestions(false);
-        setUserInput(e.currentTarget.innerText);
+        //setUserInput(e.currentTarget.innerText);
+        setFinalSearch(e.currentTarget.innerText.split(" ")[0]);
+        setUserInput("");
     }
 
     const onKeyDown = e => {
@@ -34,7 +36,7 @@ export function Searchbar({suggestions}){
             setShowSuggestions(false);
             setUserInput(filteredSuggestions[activeSuggestion]);
             setFinalSearch(filteredSuggestions[activeSuggestion].split(" ")[0]);
-            setUserInput("")
+            //setUserInput("")
         }
         else if (e.key === 'ArrowUp'){
             if (activeSuggestion === 0) {
@@ -89,12 +91,12 @@ export function Searchbar({suggestions}){
         <Fragment>
             <div className='wrapper'>
                 <div className='header'>
-                    <h1>stock stealer thing</h1>
-                    <h2>type to see stocks</h2>
+                    <div className='siteHeader'>stock stealer thing</div>
                     <div className="inputSection">
                     <input
                         //maxLength = "50"
-                        type="text"
+                        placeholder = "Search for stocks..."
+                        type="search"
                         onChange={onChange}
                         onKeyDown={onKeyDown}
                         value={userInput}

@@ -10,20 +10,21 @@ export function Fetching(stockName) {
         .then(data => setResult(data))
     }, [stockName])
 
-    if (!result){
-        return (<div className='stockLoading'><h2>Loading...</h2></div>)
+    if (!result || isNaN(result.open)){
+        return (<div className='stockLoading'><h2></h2></div>)
     }
 
     return(
         <div className='stockInfo'>
             <h1>{result.symbol}</h1>
             <div className='list'>
-                <li>Open: {+result.open}</li>
-                <li>High: {+result.high}</li>
-                <li>Low: {+result.low}</li>
-                <li>Price: {+result.close}</li>
+                <li>Open: ${+result.open}</li>
+                <li>High: ${+result.high}</li>
+                <li>Low: ${+result.low}</li>
+                <li>Price: ${+result.close}</li>
                 <li>Volume: {+result.volume}</li>
                 <li>Change: {+result.change}%</li>
+                <br></br>
             </div>
         </div>
     )
