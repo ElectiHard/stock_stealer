@@ -8,7 +8,7 @@ import { AreaChart, Area, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 
 export function Graphs({ stockName }) {
     const [result, setResult] = useState();
-
+    
     useEffect(() => {
         if (stockName !== "") {
             fetch(`https://api.twelvedata.com/time_series?symbol=${stockName}&interval=1day&apikey=5f8631e6596645a29af45b7f2a74f194&outputsize=100`)

@@ -35,21 +35,26 @@ html {
 }
 }
 
+@media only screen and (max-width: 400px) {
+  input {
+    width:calc(0.8vw + 1rem);
+  }
 
+}
+@media only screen and (min-width: 400px) {
 input {
-  position: sticky;
   border: 1px solid #999;
   padding: 0.5rem;
-  width: 300px;
-  border-radius: 5px;
+  width: calc(300px + 1rem);
+  border-radius: 15px;
   outline: none;
+}
 }
 
 .no-suggestions,
 .suggestions {
   position: absolute;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 15px;
   border: 1px solid rgb(0, 42, 156);
   border-top-width: 0;
   list-style: none;

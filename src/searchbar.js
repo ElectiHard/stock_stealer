@@ -91,7 +91,7 @@ export function Searchbar({suggestions}){
         <Fragment>
             <div className='wrapper'>
                 <div className='header'>
-                    <div className='siteHeader'>stock stealer thing</div>
+                    <div className='siteHeader'>stock stealer thing...</div>
                     <div className="inputSection">
                     <input
                         //maxLength = "50"
