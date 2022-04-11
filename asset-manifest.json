@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/stock_stealer/static/css/main.00015891.css",
+    "main.js": "/stock_stealer/static/js/main.7618a489.js",
+    "index.html": "/stock_stealer/index.html",
+    "main.00015891.css.map": "/stock_stealer/static/css/main.00015891.css.map",
+    "main.7618a489.js.map": "/stock_stealer/static/js/main.7618a489.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00015891.css",
+    "static/js/main.7618a489.js"
+  ]
+}
